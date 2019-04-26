@@ -1,4 +1,4 @@
-@import "azure-devops-ui/Core/_platformCommon.scss";
+@import "../node_modules/azure-devops-ui/Core/_platformCommon.scss";
 
 $columnWidth: 312px;
 
@@ -10,21 +10,22 @@ $columnWidth: 312px;
   margin: 10px;
 }
 
-.field {  
+.field {
   outline: none;
 
   cursor: pointer;
-  transition: background-color 0.2s linear;  
+  transition: background-color 0.2s linear;
 
   border: none;
   padding: 8px 12px;
-  background: transparent;  
+  background: transparent;
 
   width: $columnWidth;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: rgba(0, 0, 0, 0.06);
-    border-radius: 4px;    
+    border-radius: 4px;
   }
 
   // &:hover {
@@ -107,7 +108,7 @@ $columnWidth: 312px;
 //   opacity: 0.5;
 // }
 
-/// 
+///
 
 .main-content {
   max-width: 693px;
