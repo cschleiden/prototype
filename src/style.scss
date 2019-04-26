@@ -17,7 +17,7 @@ $columnWidth: 312px;
   transition: background-color 0.2s linear;
 
   border: none;
-  padding: 8px 16px;
+  padding: 12px 16px;
   background: transparent;
 
   width: $columnWidth;
@@ -44,7 +44,7 @@ $columnWidth: 312px;
 }
 
 .field-spacing {
-  padding: 8px 12px;
+  padding: 4px 8px;
   margin: 10px;
 }
 
@@ -78,7 +78,7 @@ $columnWidth: 312px;
   }
 
   &-buttons {
-    padding: 8px;
+    padding: 12px 8px 0;
 
     > * {
       margin-left: 4px;
@@ -123,13 +123,4 @@ $columnWidth: 312px;
 
   font-size: 16px !important;
   line-height: 16px !important;
-}
-
-// Design system overrides - dangerous territory below
-.bolt-list-box-text-single-select {
-  padding: 0 8px;
-}
-
-.bolt-list-box-text .bolt-table-cell-content {
-  padding: 6px 0;
 }
