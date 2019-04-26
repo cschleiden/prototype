@@ -1,0 +1,126 @@
+@import "azure-devops-ui/Core/_platformCommon.scss";
+
+$columnWidth: 312px;
+
+#root {
+  height: 1500px;
+}
+
+.field-wrapper {
+  margin: 10px;
+}
+
+.field {  
+  outline: none;
+
+  cursor: pointer;
+  transition: background-color 0.2s linear;  
+
+  border: none;
+  padding: 8px 12px;
+  background: transparent;  
+
+  width: $columnWidth;
+
+  &:hover, &:focus {
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 4px;    
+  }
+
+  // &:hover {
+  //   .bolt-toggle-button-pill {
+  //     border-color: black;
+
+  //     .bolt-toggle-button-icon {
+  //       background: black;
+  //     }
+  //   }
+  // }
+
+  &-value {
+    margin-top: 4px;
+  }
+}
+
+.field-spacing {
+  padding: 8px 12px;
+  margin: 10px;
+}
+
+.label {
+  margin: 4px 0;
+
+  .bolt-button & {
+    font-weight: normal;
+  }
+}
+
+.popover-card {
+  padding: 0px;
+
+  width: $columnWidth;
+}
+
+.popover {
+  // min-width: $width;
+  // max-width: $width;
+
+  &-header {
+    padding: 0px 4px 4px 4px;
+  }
+
+  &-top {
+    padding: 8px;
+  }
+
+  &-content {
+    padding: 0 8px;
+  }
+
+  &-buttons {
+    padding: 8px;
+
+    > * {
+      margin-left: 4px;
+    }
+  }
+}
+
+.bolt-dropdown-filter {
+  background: $transblack-6;
+}
+
+.popover-dropdown-callout {
+  // width: $width - 20px;
+}
+
+.popover-dropdown-button {
+  text-align: left;
+}
+
+.popover-2 {
+  // width: $width;
+}
+
+// Uncomment for alignment debugging
+// .bolt-portal {
+//   opacity: 0.5;
+// }
+
+/// 
+
+.main-content {
+  max-width: 693px;
+  margin-right: 50px;
+
+  padding-top: 12px;
+}
+
+.small-icon {
+  font-size: 12px !important;
+}
+
+.list-selection {
+  width: 24px;
+  margin: 0px;
+}
