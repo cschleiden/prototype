@@ -125,3 +125,42 @@ $columnWidth: 312px;
   width: 24px;
   margin: 0px;
 }
+
+// hacks
+
+.bolt-list-box-text-single-select {
+  padding: 0 8px;
+}
+
+.bolt-list-box-text .bolt-table-cell-content {
+  padding: 6px 0;
+}
+
+.list-selection {
+  width: 24px;
+  margin: 0px;
+  /* padding: 0 4px; */
+  display: inline-block;
+  text-align: center;
+  margin-right: 8px;
+  transform: translateY(1px);
+}
+
+.ms-Icon--CheckMark:before {
+  content: "\E73E";
+  font-size: 16px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.popover-header {
+  padding: 4px 8px;
+}
+
+.label.body-m {
+  font-size: 14px !important;
+}
+
+.popover {
+  padding-bottom: 12px;
+}

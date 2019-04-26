@@ -26,7 +26,7 @@ const StateValue = props => {
 
 export default props => {
   const [filter, setFilter] = React.useState("");
-  const [selectedIdx, setSelectedIdx] = React.useState(0);
+  const [selectedIdx, setSelectedIdx] = React.useState(1);
   const [isOpen, setIsOpen] = React.useState(false);
 
   const buttonRef = React.useRef<HTMLButtonElement>();
@@ -54,8 +54,8 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label className="font-weight-semibold">
-                        Update State
+                      <Label className="font-weight-semibold body-m">
+                        State
                       </Label>
                     </div>
                     <Button

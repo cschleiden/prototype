@@ -21,7 +21,7 @@ export const State = props => {
   return (
     <div className="flex-row flex-center">
       <StateIcon state={props.state} />
-      <div style={{ marginLeft: 4 }}>{props.state}</div>
+      <div style={{ marginLeft: 8 }}>{props.state}</div>
     </div>
   );
 };

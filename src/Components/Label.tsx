@@ -3,6 +3,6 @@ import { css } from "azure-devops-ui/Util";
 
 export const Label = props => {
   return (
-    <div className={css("label body-m", props.className)}>{props.children}</div>
+    <div className={css("label body-s", props.className)}>{props.children}</div>
   );
 };
