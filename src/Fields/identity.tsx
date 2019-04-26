@@ -7,6 +7,7 @@ import "./identity.scss";
 import { IdentityPickerProviderExample } from "./IdentityPickerData";
 import { HoverlayButton } from "../Components/HoverlayButton";
 import { Button } from "azure-devops-ui/Button";
+import { HoverlayLabel } from "../Components/HoverlayLabel";
 
 const items = [
   { id: "0", text: "To Do" },
@@ -64,7 +65,7 @@ export default props => {
   return (
     <>
       <HoverlayButton anchorRef={buttonRef} onClick={() => setIsOpen(true)}>
-        <Label className="body-s">Assigned To</Label>
+        <Label>Assigned To</Label>
         <StateValue>Kat Larsson</StateValue>
       </HoverlayButton>
       {isOpen && (
@@ -83,9 +84,7 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label className="body-m font-weight-semibold">
-                        Assign to
-                      </Label>
+                      <HoverlayLabel>Assign to</HoverlayLabel>
                     </div>
                     <Button
                       onClick={() => setIsOpen(false)}

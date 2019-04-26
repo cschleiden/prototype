@@ -9,6 +9,7 @@ import { State } from "../Components/State";
 import { HoverlayButton } from "../Components/HoverlayButton";
 import { Button } from "azure-devops-ui/Button";
 import { Icon } from "azure-devops-ui/Icon";
+import { HoverlayLabel } from "../Components/HoverlayLabel";
 
 const items = [
   { id: "0", text: "To Do" },
@@ -54,9 +55,7 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label className="font-weight-semibold body-m">
-                        State
-                      </Label>
+                      <HoverlayLabel>State</HoverlayLabel>
                     </div>
                     <Button
                       onClick={() => setIsOpen(false)}

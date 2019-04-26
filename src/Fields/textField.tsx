@@ -6,6 +6,7 @@ import { Label } from "../Components/Label";
 import { Popover } from "../Components/Popover";
 import { labelProps } from "../Labels/LabelData";
 import { HoverlayButton } from "../Components/HoverlayButton";
+import { HoverlayLabel } from "../Components/HoverlayLabel";
 
 const StateValue = props => {
   return (
@@ -47,9 +48,7 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label className="body-m font-weight-semibold">
-                        Milestone
-                      </Label>
+                      <HoverlayLabel>Milestone</HoverlayLabel>
                     </div>
                   </div>
                 </div>

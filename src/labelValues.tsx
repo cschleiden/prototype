@@ -8,6 +8,7 @@ import { EditableLabelGroupFreeFlow } from "./Labels/LabelPicker";
 import "./style.scss";
 import { Button } from "azure-devops-ui/Button";
 import { HoverlayButton } from "./Components/HoverlayButton";
+import { HoverlayLabel } from "./Components/HoverlayLabel";
 
 let id = 0;
 const items = [
@@ -65,9 +66,7 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label className="body-m font-weight-semibold">
-                        Tags
-                      </Label>
+                      <HoverlayLabel>Tags</HoverlayLabel>
                     </div>
                   </div>
                 </div>
