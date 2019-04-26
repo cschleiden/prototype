@@ -34,7 +34,7 @@ export default props => {
   return (
     <>
       <HoverlayButton anchorRef={buttonRef} onClick={() => setIsOpen(true)}>
-        <Label>State</Label>
+        <Label className="body-s">State</Label>
         <StateValue>
           <State state={items["" + selectedIdx].text} />
         </StateValue>

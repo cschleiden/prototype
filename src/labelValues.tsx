@@ -48,7 +48,7 @@ export default props => {
   return (
     <>
       <HoverlayButton anchorRef={buttonRef} onClick={() => setIsOpen(true)}>
-        <Label>Tags</Label>
+        <Label className="body-s">Tags</Label>
         <LabelGroup
           labelProps={labelProps}
           wrappingBehavior={WrappingBehavior.freeFlow}
@@ -65,7 +65,9 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label>Tags</Label>
+                      <Label className="body-m font-weight-semibold">
+                        Tags
+                      </Label>
                     </div>
                   </div>
                 </div>

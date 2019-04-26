@@ -33,7 +33,7 @@ export default props => {
           setIsOpen(true);
         }}
       >
-        <Label>Milestone</Label>
+        <Label className="body-s">Milestone</Label>
         <StateValue>{value}</StateValue>
       </HoverlayButton>
       {isOpen && (
@@ -47,7 +47,9 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label>Milestone</Label>
+                      <Label className="body-m font-weight-semibold">
+                        Milestone
+                      </Label>
                     </div>
                   </div>
                 </div>

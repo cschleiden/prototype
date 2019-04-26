@@ -17,7 +17,7 @@ $columnWidth: 312px;
   transition: background-color 0.2s linear;
 
   border: none;
-  padding: 8px 12px;
+  padding: 8px 16px;
   background: transparent;
 
   width: $columnWidth;
@@ -98,7 +98,7 @@ $columnWidth: 312px;
   text-align: left;
 }
 
-// Uncomment for alignment debugging
+// // Uncomment for alignment debugging
 // .bolt-portal {
 //   opacity: 0.5;
 // }
