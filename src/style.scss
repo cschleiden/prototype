@@ -63,11 +63,10 @@ $columnWidth: 312px;
 }
 
 .popover {
-  // min-width: $width;
-  // max-width: $width;
+  padding-bottom: 12px;
 
   &-header {
-    padding: 0px 4px 4px 4px;
+    padding: 4px 8px;
   }
 
   &-top {
@@ -99,10 +98,6 @@ $columnWidth: 312px;
   text-align: left;
 }
 
-.popover-2 {
-  // width: $width;
-}
-
 // Uncomment for alignment debugging
 // .bolt-portal {
 //   opacity: 0.5;
@@ -123,44 +118,18 @@ $columnWidth: 312px;
 
 .list-selection {
   width: 24px;
-  margin: 0px;
+  margin: 0px; 
+  margin-right: 8px;
+
+  font-size: 16px !important;
+  line-height: 16px !important;
 }
 
-// hacks
-
+// Design system overrides - dangerous territory below
 .bolt-list-box-text-single-select {
   padding: 0 8px;
 }
 
 .bolt-list-box-text .bolt-table-cell-content {
   padding: 6px 0;
-}
-
-.list-selection {
-  width: 24px;
-  margin: 0px;
-  /* padding: 0 4px; */
-  display: inline-block;
-  text-align: center;
-  margin-right: 8px;
-  transform: translateY(1px);
-}
-
-.ms-Icon--CheckMark:before {
-  content: "\E73E";
-  font-size: 16px;
-  line-height: 16px;
-  color: rgba(0, 0, 0, 0.9) !important;
-}
-
-.popover-header {
-  padding: 4px 8px;
-}
-
-.label.body-m {
-  font-size: 14px !important;
-}
-
-.popover {
-  padding-bottom: 12px;
 }
