@@ -9,6 +9,7 @@ import "./style.scss";
 import { Button } from "azure-devops-ui/Button";
 import { HoverlayButton } from "./Components/HoverlayButton";
 import { Icon } from "azure-devops-ui/Icon";
+import { HoverlayLabel } from "./Components/HoverlayLabel";
 
 let id = 0;
 const items = [
@@ -65,9 +66,7 @@ export default props => {
                 <div className="popover-top">
                   <div className="popover-header flex-center flex-row">
                     <div className="flex-grow">
-                      <Label className="body-m font-weight-semibold">
-                        Update Some Field
-                      </Label>
+                      <HoverlayLabel>Update Some Field</HoverlayLabel>
                     </div>
                     <Button
                       onClick={() => setIsOpen(false)}
