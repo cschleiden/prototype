@@ -61,7 +61,7 @@ export default props => {
               setSelectedIdx(idx);
               setIsOpen(false);
             },
-            label: "Update Some Field",
+            label: "Some Field",
             additionalHeaderContent: (
               <div className="bolt-dropdown-filter-container bolt-dropdown-filter">
                 <FilterInput value={filter} setValue={setFilter} />
