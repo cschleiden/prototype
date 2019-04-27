@@ -43,16 +43,11 @@ export default props => {
           onDismiss={() => setIsOpen(false)}
           anchorElement={buttonRef.current}
           contentProps={{
-            children: (
+            label: "Milestone",
+            hideClose: true,
+            content: (
               <>
-                <div className="popover-top">
-                  <div className="popover-header flex-center flex-row">
-                    <div className="flex-grow">
-                      <HoverlayLabel>Milestone</HoverlayLabel>
-                    </div>
-                  </div>
-                </div>
-                <div className="popover-content">
+                <div className="textfield-wrapper">
                   <TextField
                     autoFocus={true}
                     value={tempValue}

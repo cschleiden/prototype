@@ -1,19 +1,19 @@
+import { Button } from "azure-devops-ui/Button";
+import { ContentSize } from "azure-devops-ui/Callout";
+import { Card, CardContent } from "azure-devops-ui/Card";
+import { FocusGroup } from "azure-devops-ui/FocusGroup";
+import { Panel } from "azure-devops-ui/Panel";
 import { SurfaceBackground, SurfaceContext } from "azure-devops-ui/Surface";
 import React from "react";
 import ReactDOM from "react-dom";
-import AllowedValues from "./allowedValues";
-import LabelValues from "./labelValues";
-import State from "./Fields/state";
+import AllowedValues from "./Fields/allowedValues";
 import Identity from "./Fields/identity";
-import Toggle from "./Fields/toggle";
+import State from "./Fields/state";
+import Tags from "./Fields/tags";
 import TextField from "./Fields/textField";
+import Toggle from "./Fields/toggle";
 import "./iconFont.css";
-import { Card, CardContent } from "azure-devops-ui/Card";
-import { FocusZone } from "azure-devops-ui/FocusZone";
-import { FocusGroup } from "azure-devops-ui/FocusGroup";
-import { Panel } from "azure-devops-ui/Panel";
-import { Button } from "azure-devops-ui/Button";
-import { ContentSize } from "azure-devops-ui/Callout";
+import "./style.scss";
 
 const Content = props => {
   return (
@@ -67,7 +67,7 @@ const Content = props => {
             <AllowedValues />
             <Toggle />
             <AllowedValues />
-            <LabelValues />
+            <Tags />
           </FocusGroup>
         </div>
       </div>

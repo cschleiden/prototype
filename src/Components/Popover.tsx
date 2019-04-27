@@ -3,11 +3,18 @@ import { Card } from "azure-devops-ui/Card";
 import { IDropdown } from "azure-devops-ui/Dropdown";
 import { Location } from "azure-devops-ui/Utilities/Position";
 import * as React from "react";
+import { Button } from "azure-devops-ui/Button";
+import { HoverlayLabel } from "./HoverlayLabel";
 
 const PopoverContent: React.FC<{
   onDismiss: Function;
   onSelect: (idx: number) => void;
   selectedIdx: number;
+  hideClose?: boolean;
+  hideHeader?: boolean;
+  label: string;
+  additionalHeaderContent?: JSX.Element;
+  content: JSX.Element;
 }> = props => {
   const dropdown = React.useRef<IDropdown>();
 
@@ -22,7 +29,31 @@ const PopoverContent: React.FC<{
         contentPadding: false
       }}
     >
-      <div className="popover flex-column flex-grow">{props.children}</div>
+      <div className="popover flex-column flex-grow">
+        {!props.hideHeader && (
+          <div className="popover-top flex-column">
+            <div className="popover-header flex-center flex-row">
+              <div className="flex-grow">
+                <HoverlayLabel>{props.label}</HoverlayLabel>
+              </div>
+              {!props.hideClose && (
+                <Button
+                  className="hoverlay-close"
+                  onClick={() => props.onDismiss()}
+                  subtle={true}
+                  iconProps={{
+                    iconName: "ChromeClose",
+                    className: "hoverlay-close-icon"
+                  }}
+                />
+              )}
+            </div>
+            {props.additionalHeaderContent}
+          </div>
+        )}
+
+        {props.content}
+      </div>
     </Card>
   );
 };

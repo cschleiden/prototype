@@ -1,13 +1,17 @@
 @import "../node_modules/azure-devops-ui/Core/_platformCommon.scss";
-
-$columnWidth: 312px;
+@import "./Common.scss";
 
 #root {
   height: 1500px;
 }
 
-.field-wrapper {
-  margin: 10px;
+// Label outside of popover
+.label {
+  margin-bottom: 10px;
+
+  .bolt-button & {
+    font-weight: normal;
+  }
 }
 
 .field {
@@ -27,33 +31,17 @@ $columnWidth: 312px;
     background: rgba(0, 0, 0, 0.06);
     border-radius: 4px;
   }
-
-  // &:hover {
-  //   .bolt-toggle-button-pill {
-  //     border-color: black;
-
-  //     .bolt-toggle-button-icon {
-  //       background: black;
-  //     }
-  //   }
-  // }
-
-  &-value {
-    margin-top: 4px;
-  }
 }
 
-.field-spacing {
-  padding: 4px 8px;
-  margin: 10px;
+//////
+
+.hoverlay-label {
+  padding: 14px 16px;
 }
 
-.label {
-  margin: 4px 0;
-
-  .bolt-button & {
-    font-weight: normal;
-  }
+.hoverlay-close {
+  font-size: 12px !important;
+  margin: 12px;
 }
 
 .popover-card {
@@ -63,35 +51,19 @@ $columnWidth: 312px;
 }
 
 .popover {
-  padding-bottom: 12px;
-
-  &-header {
-    padding: 4px 8px;
-  }
-
-  &-top {
-    padding: 8px;
-  }
-
-  &-content {
-    padding: 0 8px;
-  }
+  padding-bottom: 12px;  
 
   &-buttons {
-    padding: 12px 8px 0;
+    padding: 12px 16px 0px 1px;
 
     > * {
-      margin-left: 4px;
+      margin-left: 8px;
     }
   }
 }
 
 .bolt-dropdown-filter {
   background: $transblack-6;
-}
-
-.popover-dropdown-callout {
-  // width: $width - 20px;
 }
 
 .popover-dropdown-button {
@@ -105,6 +77,29 @@ $columnWidth: 312px;
 
 ///
 
+.filter-input-container {
+  padding: 8px 12px;
+  padding-top: 0;
+}
+
+.filter-input {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+    border: 0;
+
+  .bolt-textfield-input {
+    background: transparent;
+  }
+}
+
+///
+
+.textfield-wrapper {
+  padding: 0 16px;
+}
+
+///
+
 .main-content {
   max-width: 693px;
   margin-right: 50px;
@@ -112,15 +107,23 @@ $columnWidth: 312px;
   padding-top: 12px;
 }
 
-.small-icon {
-  font-size: 12px !important;
+// 
+
+// List styles
+
+.bolt-list-box-text .bolt-table-cell-content {
+  padding: 0 !important;
+}
+
+.list-item {
+  // Override bolt list style
+  padding: 0px !important;
 }
 
 .list-selection {
   width: 24px;
-  margin: 0px; 
-  margin-right: 8px;
+  height: 24px;
+  margin: 4px 8px;
 
   font-size: 16px !important;
-  line-height: 16px !important;
 }

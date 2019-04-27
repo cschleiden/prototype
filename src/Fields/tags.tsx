@@ -1,14 +1,11 @@
 import { LabelGroup, WrappingBehavior } from "azure-devops-ui/Label";
-import { TextField } from "azure-devops-ui/TextField";
 import * as React from "react";
-import { Label } from "./Components/Label";
-import { Popover } from "./Components/Popover";
-import { labelProps } from "./Labels/LabelData";
-import { EditableLabelGroupFreeFlow } from "./Labels/LabelPicker";
-import "./style.scss";
-import { Button } from "azure-devops-ui/Button";
-import { HoverlayButton } from "./Components/HoverlayButton";
-import { HoverlayLabel } from "./Components/HoverlayLabel";
+import { HoverlayButton } from "../Components/HoverlayButton";
+import { HoverlayLabel } from "../Components/HoverlayLabel";
+import { Label } from "../Components/Label";
+import { Popover } from "../Components/Popover";
+import { labelProps } from "../Labels/LabelData";
+import { EditableLabelGroupFreeFlow } from "../Labels/LabelPicker";
 
 let id = 0;
 const items = [

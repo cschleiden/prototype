@@ -5,16 +5,29 @@ import { TextField } from "azure-devops-ui/TextField";
 import * as React from "react";
 import { Label } from "../Components/Label";
 import { Popover } from "../Components/Popover";
-import { State } from "../Components/State";
-import { HoverlayButton } from "../Components/HoverlayButton";
 import { Button } from "azure-devops-ui/Button";
+import { HoverlayButton } from "../Components/HoverlayButton";
 import { Icon } from "azure-devops-ui/Icon";
 import { HoverlayLabel } from "../Components/HoverlayLabel";
+import { FilterInput } from "../Components/FilterInput";
 
+let id = 0;
 const items = [
-  { id: "0", text: "To Do" },
-  { id: "1", text: "Doing" },
-  { id: "2", text: "Done" }
+  { id: id++, text: "Canberra" },
+  { id: id++, text: "Belmopan" },
+  { id: id++, text: "Porto-Novo" },
+  { id: id++, text: "Sucre" },
+  { id: id++, text: "Brasília" },
+  { id: id++, text: "Gitega" },
+  { id: id++, text: "Yaoundé" },
+  { id: id++, text: "Ottawa" },
+  { id: id++, text: "Beijing" },
+  { id: id++, text: "Yamoussoukro" },
+  { id: id++, text: "Malabo" },
+  { id: id++, text: "New Delhi" },
+  { id: id++, text: "Astana" },
+  { id: id++, text: "Vaduz" },
+  { id: id++, text: "Valletta" }
 ];
 
 const StateValue = props => {
@@ -27,18 +40,16 @@ const StateValue = props => {
 
 export default props => {
   const [filter, setFilter] = React.useState("");
-  const [selectedIdx, setSelectedIdx] = React.useState(1);
+  const [selectedIdx, setSelectedIdx] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const buttonRef = React.useRef<HTMLButtonElement>();
+  const buttonRef = React.useRef<Button>();
 
   return (
     <>
       <HoverlayButton anchorRef={buttonRef} onClick={() => setIsOpen(true)}>
-        <Label className="body-s">State</Label>
-        <StateValue>
-          <State state={items["" + selectedIdx].text} />
-        </StateValue>
+        <Label className="body-s">Some Field</Label>
+        <StateValue>{items["" + selectedIdx].text}</StateValue>
       </HoverlayButton>
       {isOpen && (
         <Popover
@@ -50,7 +61,12 @@ export default props => {
               setSelectedIdx(idx);
               setIsOpen(false);
             },
-            label: "State",
+            label: "Update Some Field",
+            additionalHeaderContent: (
+              <div className="bolt-dropdown-filter-container bolt-dropdown-filter">
+                <FilterInput value={filter} setValue={setFilter} />
+              </div>
+            ),
             content: (
               <ListBox
                 items={
@@ -68,13 +84,14 @@ export default props => {
                       className="list-item flex-center"
                       columnIndex={colIdx}
                       tableColumn={column}
+                      key={item.id}
                     >
                       <div className="list-selection flex-row justify-center flex-center">
                         {selectedIdx === +item.id && (
                           <Icon iconName="CheckMark" />
                         )}
                       </div>
-                      <State state={item.text}>{item.text}</State>
+                      {item.text}
                     </SimpleTableCell>
                   );
                 }}

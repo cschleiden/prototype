@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button } from "azure-devops-ui/Button";
-import { Label } from "./Label";
+import "./HoverlayButton.scss";
 
 export const HoverlayButton = props => {
   return (

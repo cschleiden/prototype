@@ -79,42 +79,17 @@ export default props => {
               setSelectedIdx(idx);
               setIsOpen(false);
             },
-            children: (
-              <>
-                <div className="popover-top">
-                  <div className="popover-header flex-center flex-row">
-                    <div className="flex-grow">
-                      <HoverlayLabel>Assign to</HoverlayLabel>
-                    </div>
-                    <Button
-                      onClick={() => setIsOpen(false)}
-                      subtle={true}
-                      iconProps={{
-                        iconName: "ChromeClose",
-                        className: "small-icon"
-                      }}
-                    />
-                  </div>
-                  {/* <div className="bolt-dropdown-filter-container">
-                    <TextField
-                      className="bolt-dropdown-filter"
-                      excludeTabStop={true}
-                      prefixIconProps={{ iconName: "Search" }}
-                      value={filter}
-                      onChange={(_, value) => setFilter(value)}
-                    />
-                  </div> */}
-                </div>
-                <div className="identity-popover">
-                  <IdentityPicker
-                    onIdentitiesRemoved={onIdentitiesRemoved}
-                    onIdentityAdded={onIdentityAdded}
-                    onIdentityRemoved={onIdentityRemoved}
-                    pickerProvider={pickerProvider}
-                    selectedIdentities={selectedIdentities}
-                  />
-                </div>
-              </>
+            label: "Assigned To",
+            content: (
+              <div className="identity-popover">
+                <IdentityPicker
+                  onIdentitiesRemoved={onIdentitiesRemoved}
+                  onIdentityAdded={onIdentityAdded}
+                  onIdentityRemoved={onIdentityRemoved}
+                  pickerProvider={pickerProvider}
+                  selectedIdentities={selectedIdentities}
+                />
+              </div>
             )
           }}
         />
