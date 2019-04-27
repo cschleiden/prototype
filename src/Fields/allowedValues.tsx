@@ -64,7 +64,7 @@ export default props => {
             label: "Some Field",
             additionalHeaderContent: (
               <div className="bolt-dropdown-filter-container bolt-dropdown-filter">
-                <FilterInput value={filter} setValue={setFilter} />
+                <FilterInput filter={filter} setFilter={setFilter} />
               </div>
             ),
             content: (
