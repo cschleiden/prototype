@@ -19,7 +19,7 @@ import "./style.scss";
 const Content = props => {
   return (
     <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
-      <div className={props.isPanel ? "flex-column" : "flex-row"}>
+      <div className={props.isPanel ? "content-panel" : "content"}>
         <div className="flex-column main-content flex-stretch">
           <Card
             headerDescriptionProps={{

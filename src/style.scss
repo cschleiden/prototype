@@ -137,9 +137,33 @@
 
 /////
 
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.content-panel {
+  display: flex;
+  flex-direction: column;
+
+  .main-content {
+    margin-right: 0;
+  }
+}
+
 // Mobile
 
 @media screen and (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    
+    .main-content {
+      margin-right: 0;
+    }
+  }
+
   .popover-card {
     background: white;
     position: fixed;
