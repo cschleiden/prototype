@@ -33,9 +33,7 @@ const PopoverContent: React.FC<{
         {!props.hideHeader && (
           <div className="popover-top flex-column">
             <div className="popover-header flex-center flex-row">
-              <div className="flex-grow">
-                <HoverlayLabel>{props.label}</HoverlayLabel>
-              </div>
+              <HoverlayLabel>{props.label}</HoverlayLabel>
               {!props.hideClose && (
                 <Button
                   className="hoverlay-close"

@@ -5,7 +5,7 @@ export const HoverlayLabel = props => {
   return (
     <div
       className={css(
-        "hoverlay-label body-m font-weight-semibold",
+        "hoverlay-label flex-grow body-m font-weight-semibold",
         props.className
       )}
     >

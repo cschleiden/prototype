@@ -58,25 +58,11 @@ export default props => {
           onDismiss={() => setIsOpen(false)}
           anchorElement={buttonRef.current}
           contentProps={{
-            children: (
-              <>
-                <div className="popover-top">
-                  <div className="popover-header flex-center flex-row">
-                    <div className="flex-grow">
-                      <HoverlayLabel>Tags</HoverlayLabel>
-                    </div>
-                  </div>
-                </div>
-                {/* <div className="popover-content"> */}
+            label: "Tags",
+            content: (
+              <div className="tags">
                 <EditableLabelGroupFreeFlow />
-                {/* </div> */}
-                {/* <div className="popover-buttons flex-row justify-end">
-                  <Button onClick={close}>Cancel</Button>
-                  <Button onClick={close} primary>
-                    Save
-                  </Button>
-                </div> */}
-              </>
+              </div>
             )
           }}
         />
