@@ -12,6 +12,7 @@ import State from "./Fields/state";
 import Tags from "./Fields/tags";
 import TextField from "./Fields/textField";
 import Toggle from "./Fields/toggle";
+import Integer from "./Fields/integer";
 import "./iconFont.css";
 import "./style.scss";
 
@@ -64,6 +65,7 @@ const Content = props => {
             <AllowedValues />
             <AllowedValues />
             <TextField />
+            <Integer />
             <AllowedValues />
             <Toggle />
             <AllowedValues />
