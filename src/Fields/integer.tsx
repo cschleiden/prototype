@@ -39,6 +39,7 @@ export default props => {
       </HoverlayButton>
       {isOpen && (
         <Popover
+          lightDismiss={value === tempValue}
           blurDismiss={false}
           onDismiss={() => setIsOpen(false)}
           anchorElement={buttonRef.current}
@@ -58,6 +59,7 @@ export default props => {
                 <div className="popover-buttons flex-row justify-end">
                   <Button onClick={close}>Cancel</Button>
                   <Button
+                    disabled={value === tempValue}
                     onClick={() => {
                       setValue(tempValue);
                       close();
