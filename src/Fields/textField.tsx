@@ -16,6 +16,8 @@ const StateValue = props => {
   );
 };
 
+const InputLimit = 20;
+
 export default props => {
   const [value, setValue] = React.useState("Konfabulator");
   const [tempValue, setTempValue] = React.useState(value);
@@ -52,8 +54,15 @@ export default props => {
                   <TextField
                     autoFocus={true}
                     value={tempValue}
-                    onChange={(_, value) => setTempValue(value)}
+                    onChange={(_, value) =>
+                      value.length <= InputLimit && setTempValue(value)
+                    }
                   />
+                  {tempValue.length >= 15 && (
+                    <div className="flex-row justify-end">
+                      {tempValue.length}/{InputLimit}
+                    </div>
+                  )}
                 </div>
                 <div className="popover-buttons flex-row justify-end">
                   <Button onClick={close}>Cancel</Button>
