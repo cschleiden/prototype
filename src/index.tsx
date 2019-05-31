@@ -13,6 +13,7 @@ import Tags from "./Fields/tags";
 import TextField from "./Fields/textField";
 import Toggle from "./Fields/toggle";
 import Integer from "./Fields/integer";
+import LongText from "./Fields/longText";
 import "./iconFont.css";
 import "./style.scss";
 
@@ -21,41 +22,7 @@ const Content = props => {
     <SurfaceContext.Provider value={{ background: SurfaceBackground.neutral }}>
       <div className={props.isPanel ? "content-panel" : "content"}>
         <div className="flex-column main-content flex-stretch">
-          <Card
-            headerDescriptionProps={{
-              text: "Description",
-              className: "body-l font-weight-semibold"
-            }}
-            headerCommandBarItems={[
-              {
-                important: true,
-                subtle: true,
-                id: "edit",
-                iconProps: {
-                  iconName: "Edit"
-                }
-              }
-            ]}
-          >
-            <CardContent contentPadding={false}>
-              <div className="flex-column">
-                <h3>They had a house of crystal pillars</h3>
-
-                <p>
-                  On the planet Mars by the edge of an empty sea, and every
-                  morning you could see Mrs. K eating the golden fruits that
-                  grew from the crystal walls, or cleaning the house with
-                  handfuls of magnetic dust which, taking all dirt with it, blew
-                  away on the hot wind. Afternoons, when the fossil sea was warm
-                  and motionless, and the wine trees stood stiff in the yard,
-                  and the little distant Martian bone town was all enclosed, and
-                  no one drifted out their doors, you could see Mr. K himself in
-                  his room, reading from a metal book with raised hieroglyphs
-                  over which he brushed his hand, as one might play a harp.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <LongText />
         </div>
 
         <div>

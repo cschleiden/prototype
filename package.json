@@ -11,6 +11,8 @@
   "description": "",
   "version": "0.0.265",
   "devDependencies": {
+    "@types/react": "16.8.19",
+    "@types/react-dom": "16.8.4",
     "react-scripts": "1.0.0"
   },
   "scripts": {
