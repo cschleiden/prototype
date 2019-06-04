@@ -1,8 +1,7 @@
-import * as React from "react";
 import { Button } from "azure-devops-ui/Button";
-import { ContentSize } from "azure-devops-ui/Callout";
 import { Card, CardContent } from "azure-devops-ui/Card";
 import { TextField } from "azure-devops-ui/TextField";
+import * as React from "react";
 
 export default () => {
   const [editable, setEditable] = React.useState(false);
@@ -29,7 +28,7 @@ export default () => {
         className: "body-l font-weight-semibold"
       }}
       headerCommandBarItems={
-        !editable && [
+        (!editable && [
           {
             important: true,
             subtle: true,
@@ -41,7 +40,8 @@ export default () => {
               setEditable(true);
             }
           }
-        ]
+        ]) ||
+        undefined
       }
     >
       <CardContent contentPadding={false}>

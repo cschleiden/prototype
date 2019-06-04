@@ -1,13 +1,11 @@
 import { ObservableArray } from "azure-devops-ui/Core/Observable";
 import { IdentityPicker, IIdentity } from "azure-devops-ui/IdentityPicker";
 import * as React from "react";
+import { HoverlayButton } from "../Components/HoverlayButton";
 import { Label } from "../Components/Label";
 import { Popover } from "../Components/Popover";
 import "./identity.scss";
 import { IdentityPickerProviderExample } from "./IdentityPickerData";
-import { HoverlayButton } from "../Components/HoverlayButton";
-import { Button } from "azure-devops-ui/Button";
-import { HoverlayLabel } from "../Components/HoverlayLabel";
 
 const items = [
   { id: "0", text: "To Do" },
@@ -15,7 +13,7 @@ const items = [
   { id: "2", text: "Done" }
 ];
 
-const StateValue = props => {
+const StateValue: React.FC = props => {
   return (
     <div className="field-value body-l font-weight-semibold">
       {props.children}
@@ -23,7 +21,7 @@ const StateValue = props => {
   );
 };
 
-export default props => {
+export default () => {
   const [filter, setFilter] = React.useState("");
   const [selectedIdx, setSelectedIdx] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -33,7 +31,7 @@ export default props => {
   const selectedIdentities = new ObservableArray<IIdentity>([]);
 
   const onIdentitiesRemoved = (identities: IIdentity[]) => {
-    selectedIdentities.value = this.selectedIdentities.value.filter(
+    selectedIdentities.value = selectedIdentities.value.filter(
       (entity: IIdentity) =>
         identities.filter(item => item.entityId === entity.entityId).length ===
         0
@@ -45,7 +43,7 @@ export default props => {
   };
 
   const onIdentityRemoved = (identity: IIdentity) => {
-    selectedIdentities.value = this.selectedIdentities.value.filter(
+    selectedIdentities.value = selectedIdentities.value.filter(
       (entity: IIdentity) => entity.entityId !== identity.entityId
     );
   };
@@ -75,7 +73,7 @@ export default props => {
           anchorElement={buttonRef.current}
           contentProps={{
             selectedIdx,
-            onSelect: idx => {
+            onSelect: (idx: number) => {
               setSelectedIdx(idx);
               setIsOpen(false);
             },

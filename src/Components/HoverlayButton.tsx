@@ -2,7 +2,10 @@ import * as React from "react";
 import { Button } from "azure-devops-ui/Button";
 import "./HoverlayButton.scss";
 
-export const HoverlayButton = props => {
+export const HoverlayButton: React.FC<{
+  anchorRef?: any;
+  onClick?: () => void;
+}> = props => {
   return (
     <div className="field-wrapper" ref={props.anchorRef}>
       <Button className="field" onClick={props.onClick}>

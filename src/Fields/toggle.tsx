@@ -11,7 +11,7 @@ const items = [
   { id: "2", text: "Done" }
 ];
 
-export default props => {
+export default () => {
   const toggleValue = new ObservableValue<boolean>(false);
 
   const content = (

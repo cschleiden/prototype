@@ -1,15 +1,12 @@
+import { Icon } from "azure-devops-ui/Icon";
 import { ListSelection } from "azure-devops-ui/List";
 import { ListBox } from "azure-devops-ui/ListBox";
 import { SimpleTableCell } from "azure-devops-ui/Table";
-import { TextField } from "azure-devops-ui/TextField";
 import * as React from "react";
+import { HoverlayButton } from "../Components/HoverlayButton";
 import { Label } from "../Components/Label";
 import { Popover } from "../Components/Popover";
 import { State } from "../Components/State";
-import { HoverlayButton } from "../Components/HoverlayButton";
-import { Button } from "azure-devops-ui/Button";
-import { Icon } from "azure-devops-ui/Icon";
-import { HoverlayLabel } from "../Components/HoverlayLabel";
 
 const items = [
   { id: "0", text: "To Do" },
@@ -17,7 +14,7 @@ const items = [
   { id: "2", text: "Done" }
 ];
 
-const StateValue = props => {
+const StateValue: React.FC = props => {
   return (
     <div className="field-value body-l font-weight-semibold">
       {props.children}
@@ -25,19 +22,19 @@ const StateValue = props => {
   );
 };
 
-export default props => {
+export default () => {
   const [filter, setFilter] = React.useState("");
   const [selectedIdx, setSelectedIdx] = React.useState(1);
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const buttonRef = React.useRef<HTMLButtonElement>();
+  const buttonRef = React.useRef<HTMLDivElement>();
 
   return (
     <>
       <HoverlayButton anchorRef={buttonRef} onClick={() => setIsOpen(true)}>
         <Label className="body-s">State</Label>
         <StateValue>
-          <State state={items["" + selectedIdx].text} />
+          <State state={items[selectedIdx].text} />
         </StateValue>
       </HoverlayButton>
       {isOpen && (
@@ -46,7 +43,7 @@ export default props => {
           anchorElement={buttonRef.current}
           contentProps={{
             selectedIdx,
-            onSelect: idx => {
+            onSelect: (idx: number) => {
               setSelectedIdx(idx);
               setIsOpen(false);
             },
@@ -74,7 +71,7 @@ export default props => {
                           <Icon iconName="CheckMark" />
                         )}
                       </div>
-                      <State state={item.text}>{item.text}</State>
+                      <State state={item.text!}>{item.text}</State>
                     </SimpleTableCell>
                   );
                 }}

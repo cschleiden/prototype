@@ -1,7 +1,10 @@
 import * as React from "react";
 import { TextField } from "azure-devops-ui/TextField";
 
-export const FilterInput = props => {
+export const FilterInput: React.FC<{
+  setFilter: (value: string) => void;
+  filter: string;
+}> = props => {
   return (
     <div className="filter-input-container">
       <TextField

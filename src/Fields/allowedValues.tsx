@@ -1,15 +1,13 @@
+import { Button } from "azure-devops-ui/Button";
+import { Icon } from "azure-devops-ui/Icon";
 import { ListSelection } from "azure-devops-ui/List";
 import { ListBox } from "azure-devops-ui/ListBox";
 import { SimpleTableCell } from "azure-devops-ui/Table";
-import { TextField } from "azure-devops-ui/TextField";
 import * as React from "react";
+import { FilterInput } from "../Components/FilterInput";
+import { HoverlayButton } from "../Components/HoverlayButton";
 import { Label } from "../Components/Label";
 import { Popover } from "../Components/Popover";
-import { Button } from "azure-devops-ui/Button";
-import { HoverlayButton } from "../Components/HoverlayButton";
-import { Icon } from "azure-devops-ui/Icon";
-import { HoverlayLabel } from "../Components/HoverlayLabel";
-import { FilterInput } from "../Components/FilterInput";
 
 let id = 0;
 const items = [
@@ -30,7 +28,7 @@ const items = [
   { id: id++, text: "Valletta" }
 ];
 
-const StateValue = props => {
+const StateValue: React.FC = props => {
   return (
     <div className="field-value body-l font-weight-semibold">
       {props.children}
@@ -38,18 +36,18 @@ const StateValue = props => {
   );
 };
 
-export default props => {
+export default () => {
   const [filter, setFilter] = React.useState("");
   const [selectedIdx, setSelectedIdx] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const buttonRef = React.useRef<Button>();
+  const buttonRef = React.useRef<HTMLDivElement>();
 
   return (
     <>
       <HoverlayButton anchorRef={buttonRef} onClick={() => setIsOpen(true)}>
         <Label className="body-s">Some Field</Label>
-        <StateValue>{items["" + selectedIdx].text}</StateValue>
+        <StateValue>{items[selectedIdx].text}</StateValue>
       </HoverlayButton>
       {isOpen && (
         <Popover
@@ -57,7 +55,7 @@ export default props => {
           anchorElement={buttonRef.current}
           contentProps={{
             selectedIdx,
-            onSelect: idx => {
+            onSelect: (idx: number) => {
               setSelectedIdx(idx);
               setIsOpen(false);
             },

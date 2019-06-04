@@ -1,9 +1,9 @@
+import { Button } from "azure-devops-ui/Button";
 import { Callout } from "azure-devops-ui/Callout";
 import { Card } from "azure-devops-ui/Card";
-import { IDropdown } from "azure-devops-ui/Dropdown";
+import { IExpandable } from "azure-devops-ui/Expandable";
 import { Location } from "azure-devops-ui/Utilities/Position";
 import * as React from "react";
-import { Button } from "azure-devops-ui/Button";
 import { HoverlayLabel } from "./HoverlayLabel";
 
 const PopoverContent: React.FC<{
@@ -16,7 +16,7 @@ const PopoverContent: React.FC<{
   additionalHeaderContent?: JSX.Element;
   content: JSX.Element;
 }> = props => {
-  const dropdown = React.useRef<IDropdown>();
+  const dropdown = React.useRef<IExpandable>();
 
   React.useEffect(() => {
     dropdown && dropdown.current && dropdown.current.expand();
@@ -68,8 +68,8 @@ export const Popover: React.FC<any> = props => {
       anchorElement={props.anchorElement}
       anchorOrigin={
         props.anchorOrigin || {
-          horizontal: Location.start,
-          vertical: Location.start
+          horizontal: "start",
+          vertical: "start"
         }
       }
     >

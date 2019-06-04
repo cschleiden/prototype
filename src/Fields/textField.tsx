@@ -1,14 +1,11 @@
 import { Button } from "azure-devops-ui/Button";
-import { LabelGroup, WrappingBehavior } from "azure-devops-ui/Label";
 import { TextField } from "azure-devops-ui/TextField";
 import * as React from "react";
+import { HoverlayButton } from "../Components/HoverlayButton";
 import { Label } from "../Components/Label";
 import { Popover } from "../Components/Popover";
-import { labelProps } from "../Labels/LabelData";
-import { HoverlayButton } from "../Components/HoverlayButton";
-import { HoverlayLabel } from "../Components/HoverlayLabel";
 
-const StateValue = props => {
+const StateValue: React.FC = props => {
   return (
     <div className="field-value body-l font-weight-semibold">
       {props.children}
@@ -18,7 +15,7 @@ const StateValue = props => {
 
 const InputLimit = 20;
 
-export default props => {
+export default () => {
   const [value, setValue] = React.useState("Konfabulator");
   const [tempValue, setTempValue] = React.useState(value);
   const [isOpen, setIsOpen] = React.useState(false);

@@ -17,7 +17,7 @@ export class EditableLabelGroupFreeFlow extends React.Component<{}> {
       <EditableLabelGroup
         ref={this.ref}
         labelProps={labelProps}
-        wrappingBehavior={WrappingBehavior.freeFlow}
+        wrappingBehavior={/* WrappingBehavior.freeFlow */ 0}
         getSuggestedLabels={getSuggestions}
         onLabelSubmit={this.onLabelSubmit}
         onLabelRemove={this.onLabelRemove}

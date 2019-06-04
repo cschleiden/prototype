@@ -1,7 +1,6 @@
 import { LabelGroup, WrappingBehavior } from "azure-devops-ui/Label";
 import * as React from "react";
 import { HoverlayButton } from "../Components/HoverlayButton";
-import { HoverlayLabel } from "../Components/HoverlayLabel";
 import { Label } from "../Components/Label";
 import { Popover } from "../Components/Popover";
 import { labelProps } from "../Labels/LabelData";
@@ -26,7 +25,7 @@ const items = [
   { id: id++, text: "Valletta" }
 ];
 
-const StateValue = props => {
+const StateValue: React.FC = props => {
   return (
     <div className="field-value body-l font-weight-semibold">
       {props.children}
@@ -34,7 +33,7 @@ const StateValue = props => {
   );
 };
 
-export default props => {
+export default () => {
   const [filter, setFilter] = React.useState("");
   const [selectedIdx, setSelectedIdx] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -47,10 +46,7 @@ export default props => {
     <>
       <HoverlayButton anchorRef={buttonRef} onClick={() => setIsOpen(true)}>
         <Label className="body-s">Tags</Label>
-        <LabelGroup
-          labelProps={labelProps}
-          wrappingBehavior={WrappingBehavior.freeFlow}
-        />
+        <LabelGroup labelProps={labelProps} wrappingBehavior={0} />
       </HoverlayButton>
       {isOpen && (
         <Popover
