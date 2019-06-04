@@ -11,15 +11,20 @@ import Tags from "./Fields/tags";
 import TextField from "./Fields/textField";
 import Toggle from "./Fields/toggle";
 import "./style.scss";
+import { WorkItemHeader } from "./Components/Header";
 
 const Content = () => {
   return (
     <SurfaceContext.Provider
       value={{ background: /* SurfaceBackground.neutral */ 1 }}
     >
-      <div className="content">
-        <div className="flex-column main-content flex-stretch">
-          <LongText />
+      <div className="content flex-row">
+        <div className="flex-column">
+          <WorkItemHeader id={42} title="This is a work item title" />
+
+          <div className="flex-column main-content flex-stretch">
+            <LongText />
+          </div>
         </div>
 
         <div>
