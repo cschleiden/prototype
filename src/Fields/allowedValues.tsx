@@ -1,4 +1,3 @@
-import { Button } from "azure-devops-ui/Button";
 import { Icon } from "azure-devops-ui/Icon";
 import { ListSelection } from "azure-devops-ui/List";
 import { ListBox } from "azure-devops-ui/ListBox";

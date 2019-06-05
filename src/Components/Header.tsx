@@ -6,9 +6,13 @@ export const WorkItemHeader: React.FC<{ id: number; title: string }> = ({
   title
 }) => {
   return (
-    <div>
+    <div className="flex-column">
       <div className="title-m">{title}</div>
-      <WorkItemId id={id} />
+      <WorkItemId
+        className="flex-self-start"
+        workItemId={id}
+        workItemType="Bug"
+      />
     </div>
   );
 };

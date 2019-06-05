@@ -12,21 +12,26 @@ import TextField from "./Fields/textField";
 import Toggle from "./Fields/toggle";
 import "./style.scss";
 import { WorkItemHeader } from "./Components/Header";
+import { Divider } from "./Components/Divider";
+import { ActivityFeed } from "./Components/ActivityFeed/ActivityFeed";
 
 const Content = () => {
   return (
     <SurfaceContext.Provider
       value={{ background: /* SurfaceBackground.neutral */ 1 }}
     >
+      <div className="flex-column">
+        <WorkItemHeader
+          id={42}
+          title="Something doesn't work with this application"
+        />
+      </div>
       <div className="content flex-row">
-        <div className="flex-column">
-          <WorkItemHeader id={42} title="This is a work item title" />
-
-          <div className="flex-column main-content flex-stretch">
-            <LongText />
-          </div>
+        <div className="flex-column main-content flex-stretch">
+          <LongText />
+          <Divider />
+          <ActivityFeed />
         </div>
-
         <div>
           <FocusGroup>
             <State />

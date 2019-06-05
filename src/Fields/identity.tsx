@@ -7,12 +7,6 @@ import { Popover } from "../Components/Popover";
 import "./identity.scss";
 import { IdentityPickerProviderExample } from "./IdentityPickerData";
 
-const items = [
-  { id: "0", text: "To Do" },
-  { id: "1", text: "Doing" },
-  { id: "2", text: "Done" }
-];
-
 const StateValue: React.FC = props => {
   return (
     <div className="field-value body-l font-weight-semibold">
@@ -22,7 +16,6 @@ const StateValue: React.FC = props => {
 };
 
 export default () => {
-  const [filter, setFilter] = React.useState("");
   const [selectedIdx, setSelectedIdx] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
   const buttonRef = React.useRef<HTMLButtonElement>();

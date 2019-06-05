@@ -2,7 +2,6 @@ import { Button } from "azure-devops-ui/Button";
 import { Callout } from "azure-devops-ui/Callout";
 import { Card } from "azure-devops-ui/Card";
 import { IExpandable } from "azure-devops-ui/Expandable";
-import { Location } from "azure-devops-ui/Utilities/Position";
 import * as React from "react";
 import { HoverlayLabel } from "./HoverlayLabel";
 

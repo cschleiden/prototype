@@ -1,10 +1,5 @@
+import { EditableLabelGroup, ILabelModel } from "azure-devops-ui/Label";
 import * as React from "react";
-import { Button } from "azure-devops-ui/Button";
-import {
-  EditableLabelGroup,
-  WrappingBehavior,
-  ILabelModel
-} from "azure-devops-ui/Label";
 import { getSuggestions, labelProps } from "./LabelData";
 
 export class EditableLabelGroupFreeFlow extends React.Component<{}> {

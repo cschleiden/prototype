@@ -23,7 +23,7 @@ const StateValue: React.FC = props => {
 };
 
 export default () => {
-  const [filter, setFilter] = React.useState("");
+  const [filter] = React.useState("");
   const [selectedIdx, setSelectedIdx] = React.useState(1);
   const [isOpen, setIsOpen] = React.useState(false);
 

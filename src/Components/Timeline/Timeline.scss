@@ -1,0 +1,113 @@
+@import "azure-devops-ui/Core/_platformCommon.scss";
+
+$lineLeft: 16px;
+
+.timeline {
+  min-height: 200px;
+
+  position: relative;
+
+  &-line {
+    border-left: 1px solid $neutral-30;
+    position: absolute;
+    left: $lineLeft;
+    top: 0;
+    bottom: 0;
+
+    z-index: 0;
+  }
+
+  &-icon-small {
+    width: 24px;
+    height: 24px;
+
+    background: $white;
+
+    border: 1px solid $neutral-30;
+    border-radius: 50%;
+
+    .fabric-icon {
+      font-size: 12px;
+    }
+  }
+
+  &-entry {
+    z-index: 1;
+    position: relative;
+
+    &-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    &-timestamp {
+      margin-left: 10px;
+      color: $neutral-30;
+    }
+  }
+
+  &-show-more {
+    position: relative;
+    background: $neutral-2;
+
+    height: 32px;
+    margin: 20px 0;
+
+    $height: 8px;
+    $halfheight: $height / 2;
+
+    &-button {
+      height: 32px;
+      background: $neutral-2;
+      border-radius: 120px;
+      border: 1px solid $neutral-alpha-20;
+
+      z-index: 10;
+    }
+
+    &-line {
+      position: relative;
+      height: $height;
+      width: 100%;
+
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+      &:before {
+        height: $height;
+        top: 1px;
+        background: linear-gradient(
+              -135deg,
+              $neutral-10 $halfheight,
+              transparent 0
+            )
+            0 $halfheight,
+          linear-gradient(135deg, $neutral-10 $halfheight, transparent 0) 0
+            $halfheight;
+        background-position: top left;
+        background-repeat: repeat-x;
+        background-size: $height $height;
+      }
+      &:after {
+        height: $height;
+        top: 0px;
+        background: linear-gradient(
+              -135deg,
+              $neutral-2 $halfheight,
+              transparent 0
+            )
+            0 $halfheight,
+          linear-gradient(135deg, $neutral-2 $halfheight, transparent 0) 0
+            $halfheight;
+        background-position: top left;
+        background-repeat: repeat-x;
+        background-size: $height $height;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "azure-devops-ui/Core/_platformCommon.scss";
+
+.work-item-id-container {
+    background: $white;
+    border: 1px solid $neutral-8;
+
+    border-radius: 2px;
+    padding: 5px 8px;
+
+    .work-item-id {
+        margin-left: 3px;
+    }
+}

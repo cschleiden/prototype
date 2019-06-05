@@ -1,14 +1,37 @@
 import * as React from "react";
+import { css } from "azure-devops-ui/Util";
+import "./WorkItemId.scss";
+import { IssueIcon } from "../IssueIcon";
 
-export const WorkItemId: React.FC<{ id: number }> = ({ id }) => {
+export interface IWorkItemIdProps {
+  /** Optional class name to apply to the component */
+  className?: string;
+
+  /** Work item id to display. Optional if you only want to display the work item type icon/name */
+  workItemId?: number;
+
+  workItemType: string;
+}
+
+export const WorkItemId: React.FC<IWorkItemIdProps> = props => {
+  const { className, workItemId, workItemType } = props;
+
   return (
-    <div>
-      <img
-        width="16"
-        height="16"
-        src="https://tfsprodwcus0.visualstudio.com/_apis/wit/workItemIcons/icon_insect?color=CC293D&v=2"
-      />
-      {id}
+    <div
+      className={css(
+        className,
+        "work-item-id-container",
+        "flex-center",
+        "flex-row",
+        "flex-shrink",
+        "body-l"
+      )}
+    >
+      <IssueIcon typeName={workItemType} />
+
+      {workItemId !== undefined && (
+        <span className="work-item-id">#{workItemId}</span>
+      )}
     </div>
   );
 };
