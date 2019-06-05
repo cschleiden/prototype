@@ -24,7 +24,7 @@ export const Identity: React.FC<{
           } as IIdentity
         }
       />
-      {name}
+      <div className="font-weight-semibold">{name}</div>
     </div>
   );
 };

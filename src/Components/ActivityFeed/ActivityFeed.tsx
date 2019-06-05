@@ -19,7 +19,8 @@ export const ActivityFeedEntryCreation: React.FC = () => {
       )}
     >
       <IssueIcon typeName="Bug" />
-      &nbsp;<b>Bug #42</b>&nbsp;created by Christopher Schleiden
+      &nbsp;<b>Bug #42</b>&nbsp;created by{" "}
+      <Identity size={20} name="Christopher Schleiden" />
     </TimelineEntry>
   );
 };
