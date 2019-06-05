@@ -31,18 +31,18 @@ export const Identity: React.FC<{
 
 function determineImage(name: string): string | undefined {
   if (name.indexOf("Kat") !== -1) {
-    return "/identities/kat.png";
+    return "identities/kat.png";
   }
 
   if (name.indexOf("Celeste") !== -1) {
-    return "/identities/celeste.png";
+    return "identities/celeste.png";
   }
 
   if (name.indexOf("Lydia") !== -1) {
-    return "/identities/lydia.png";
+    return "identities/lydia.png";
   }
 
   if (name.indexOf("Christopher") !== -1) {
-    return "/identities/christopher.png";
+    return "identities/christopher.png";
   }
 }
